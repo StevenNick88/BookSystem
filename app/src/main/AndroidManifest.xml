@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gxu.booksystem" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- <instrumentation -->
+    <!-- android:targetPackage="com.gxu.booksystem" -->
+    <!-- android:name="android.test.InstrumentationTestRunner" /> -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarStyle" >
+
+        <!-- android:theme="@style/AppTheme" -->
+        <!-- <uses-library android:name="android.test.runner" /> -->
+        <activity
+            android:name=".LogoActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_logo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/CustomActionBarStyle" />
+        <activity
+            android:name=".LoginActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_login"
+            android:theme="@style/CustomActionBarStyle" />
+        <activity
+            android:name=".AdminMainActivity"
+            android:label="@string/title_activity_main" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/title_activity_base" />
+        <activity
+            android:name=".BookManageActivity"
+            android:label="@string/title_activity_book_manage"
+            android:theme="@style/StyledIndicators" />
+        <activity
+            android:name=".BookInfoActivity"
+            android:label="@string/title_activity_book_info" />
+
+        <!-- 分享所需的xml配置 -->
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+            <!--
+            	AuthorizeAdapter表示一个继承自cn.sharesdk.framework.authorize.AuthorizeAdapter
+            	的类，这个类可以监听到页面的生命周期，也可以获取授权页面的各种UI控件。
+            	开发者可以通过继承AuthorizeAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            -->
+            <meta-data
+                android:name="AuthorizeAdapter"
+                android:value="cn.sharesdk.demo.MyAdapter" />
+
+            <!--
+            	QZoneWebShareAdapter表示一个继承自cn.sharesdk.tencent.qzone.QZoneWebShareAdapter
+            	的类，这个类可以监听到页面的生命周期，也可以获QQ空间网页分享权页面的各种UI控件。
+            	开发者可以通过继承QZoneWebShareAdapter，重写其方法，并获取各种UI来自定义这个页面的行为。
+            -->
+            <meta-data
+                android:name="QZoneWebShareAdapter"
+                android:value="cn.sharesdk.demo.MyQZoneWebShareAdapter" />
+
+            <!--
+            	Dropbox的SSO功能需要在此处添加一个对ACTION_VIEW事件的过滤器，其中的scheme是
+            	“db-”前缀再开发者应用的加上appKey。如果此过滤器不设置，则不能完成SSO功能授权
+            -->
+            <intent-filter>
+                <data android:scheme="db-7janx53ilz11gbs" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!--
+            	如果集成QQ分享，或者使用QQ客户端来进行QQ空间的分享，须要在此处添加一个对ACTION_VIEW
+            	事件的过滤器，其中的scheme是“tencent”前缀再开发者应用的加上appId。如果此过滤器不设置，
+            	则分享结束以后不能得到正确的回调
+            -->
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name="com.example.oksui_diy.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- 易信分享回调 -->
+        <activity
+            android:name="com.example.oksui_diy.yxapi.YXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 分享所需的xml配置 -->
+
+        <activity
+            android:name=".UpdateBookActivity"
+            android:label="@string/title_activity_update_book" />
+        <activity
+            android:name=".StuMangeActivity"
+            android:label="@string/title_activity_stu_mange"
+            android:theme="@style/StyledIndicators" />
+        <activity
+            android:name=".StuInfoActivity"
+            android:label="@string/title_activity_stu_info" />
+        <activity
+            android:name=".UpdateStuActivity"
+            android:label="@string/title_activity_update_stu" />
+        <activity
+            android:name=".AdminMangeActivity"
+            android:label="@string/title_activity_admin_mange"
+            android:theme="@style/StyledIndicators" />
+        <activity
+            android:name=".AdminInfoActivity"
+            android:label="@string/title_activity_admin_info" />
+        <activity
+            android:name=".UpdateAdminActivity"
+            android:label="@string/title_activity_update_admin" />
+        <activity
+            android:name=".StuMainActivity"
+            android:label="@string/title_activity_stu_main" />
+        <activity
+            android:name=".QBookActivity"
+            android:label="@string/title_activity_qbook" />
+        <activity
+            android:name=".QBookInfoActivity"
+            android:label="@string/title_activity_qbook_info"
+            android:theme="@style/StyledIndicators" />
+        <activity
+            android:name=".QBookOrderedActivity"
+            android:label="@string/title_activity_qbook_ordered"
+            android:theme="@style/StyledIndicators" />
+        <activity
+            android:name=".QBookInfoListActivity"
+            android:label="@string/title_activity_qbook_info_list" />
+        <activity
+            android:name=".QBookInfoListDetailActivity"
+            android:label="@string/title_activity_qbook_info_list_detail" />
+        <activity
+            android:name=".QBookBorrowedActivity"
+            android:label="@string/title_activity_qbook_borrowed" />
+        <activity
+            android:name=".BorrowedBookDetailActivity"
+            android:label="@string/title_activity_borrowed_book_detail" />
+        <activity
+            android:name=".OrderBookDetailActivity"
+            android:label="@string/title_activity_order_book_detail" />
+        <activity
+            android:name=".LossBookActivity"
+            android:label="@string/title_activity_loss_book" />
+        <activity
+            android:name=".LossBookListActivity"
+            android:label="@string/title_activity_loss_book_list" />
+        <activity
+            android:name=".PayFreeActivity"
+            android:label="@string/title_activity_pay_free" />
+        <activity
+            android:name=".PayFreeListActivity"
+            android:label="@string/title_activity_pay_free_list" />
+        <activity
+            android:name=".PayFreeListDetailActivity"
+            android:label="@string/title_activity_pay_free_list_detail" />
+        <activity
+            android:name=".OnlineBooksActivity"
+            android:label="@string/title_activity_online_books" />
+        <activity
+            android:name=".WebViewActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name=".RelaxationActivity"
+            android:label="@string/title_activity_relaxation" />
+
+        <receiver
+            android:name=".receiver.BookSystemReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".QBookAdminBorrowedActivity"
+            android:label="@string/title_activity_qbook_admin_borrowed" />
+        <activity
+            android:name=".QBookAdminBorrowedListActivity"
+            android:label="@string/title_activity_qborrowed_book_admin_list" />
+
+        <receiver
+            android:name=".receiver.OrderReceiver"
+            android:enabled="true"
+            android:exported="true" >
+        </receiver>
+    </application>
+
+</manifest>

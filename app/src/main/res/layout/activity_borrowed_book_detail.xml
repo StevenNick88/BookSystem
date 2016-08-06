@@ -1,0 +1,239 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/padding_style"
+    tools:context="com.gxu.booksystem.BookInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#bbe1e1e1"
+        android:orientation="horizontal" >
+
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_gravity="left"
+            android:layout_weight="1" >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:id="@+id/b_img"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="70dp">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/b_num"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/b_num_value"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/user_num"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/user_num_value"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/borrow_time"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/borrow_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="20"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/b_name"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/b_name_value"
+            android:layout_width="wrap_content"
+            android:layout_weight="20"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/should_return"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/should_return_value"
+            android:layout_width="wrap_content"
+            android:layout_weight="15"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/remain_time"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/remain_time_value"
+            android:layout_width="wrap_content"
+            android:layout_weight="15"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/return_time"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/return_time_value"
+            android:layout_width="wrap_content"
+            android:layout_weight="15"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/overtime"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/overtime_value"
+            android:layout_width="wrap_content"
+            android:layout_weight="15"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/state"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/state_value"
+            android:layout_width="wrap_content"
+            android:layout_weight="40"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/return_book"
+            android:layout_gravity="center"
+            style="@style/btn_style"
+            android:text="@string/return_book"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/loss_book"
+            style="@style/btn_style"
+            android:layout_gravity="center"
+            android:text="@string/loss_book"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:id="@+id/borrow_book_again"
+            android:layout_gravity="center"
+            style="@style/btn_style"
+            android:text="@string/borrow_book_again"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

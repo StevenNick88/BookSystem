@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    style="@style/padding_style"
+    android:background="@drawable/bg_free"
+    tools:context="com.gxu.booksystem.AdminMangeActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:text="@string/m_num" android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText android:id="@+id/m_num_value" android:layout_width="wrap_content"
+            android:layout_weight="20"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:text="@string/m_permitted" android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText android:id="@+id/m_permitted_value" android:layout_width="wrap_content"
+            android:layout_weight="20"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:text="@string/m_pwd" android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText android:id="@+id/m_pwd_value" android:layout_width="wrap_content"
+            android:layout_weight="40"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:text="@string/m_permitborrowtime" android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <EditText android:id="@+id/m_permitborrowtime_value" android:layout_width="wrap_content"
+            android:layout_weight="40"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/add_admin"
+        android:layout_gravity="center"
+        style="@style/btn_style"
+        android:text="@string/add_admin"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

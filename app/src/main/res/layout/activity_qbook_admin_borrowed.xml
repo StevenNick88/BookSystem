@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="12"
+    tools:context="com.gxu.booksystem.QBookAdminBorrowedActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <EditText
+            android:hint="@string/loss_edit"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/borrowed_edit"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/q_stu_borrowed"
+            android:text="@string/q_stu_loss"
+            style="@style/btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/admin_borrowed_books"
+        android:layout_width="match_parent"
+        android:layout_weight="10"
+        android:layout_height="0dp"
+        android:cacheColorHint="#00000000"
+        android:divider="#19000000"
+        android:dividerHeight="4dp"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true" />
+
+
+</LinearLayout>
